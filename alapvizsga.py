@@ -8,6 +8,7 @@ def befajl(nevek, pontok ,eredmeny):
         pontok.append(int(adatok[1]))
         eredmeny.append(adatok[2])
         sor = fr.readline().strip()
+
     fr.close()
     return maxpont
 
@@ -46,10 +47,10 @@ def kereses(eredmeny, nevek):
 
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
-    maxpont=befajl(nevek, pontok,eredmeny)
+    kereses(eredmeny,nevek)
+    maxpont=befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
-    kereses(eredmeny,nevek)
     print(nevek)
     print(pontok)
     print(eredmeny)
