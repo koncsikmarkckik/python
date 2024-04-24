@@ -42,13 +42,9 @@ def rendez(pontok,nevek,eredmeny):
 
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
-<<<<<<< HEAD
-    maxpont=befajl(nevek, pontok,eredmeny)
+    maxpont=befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
-=======
-    maxpont = befajl(nevek, pontok, eredmeny)
     db = sikeres_vizsgak(eredmeny)
->>>>>>> b9f52c17acd8609bdd2cf5cc9ab86aeb32c5bc7a
     print(nevek)
     print(pontok)
     print(eredmeny)
