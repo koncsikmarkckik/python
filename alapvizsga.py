@@ -22,6 +22,21 @@ def sikeres_vizsgak(eredmeny):
 
     return db
 
+def kivalogat(nevek, eredmeny):
+    atjutott_nevei = []
+    for i in range(len(nevek)):
+        if eredmeny[i] == "igen" and not bennevan(nevek[i], atjutott_nevei):
+            atjutott_nevei.append(nevek[i])
+
+
+def bennevan(elem, lista):
+    i = 0
+    while i < len(lista) and not(lista[i] == elem):
+        i += 1
+    return i < len(lista)
+
+
+
 
 def csere(x, i, j):
     x[i], x[j] = x[j], x[i]
@@ -35,6 +50,8 @@ def rendez(nevek, pontok, eredmeny):
                 csere(nevek, j , j+1)
                 csere(eredmeny, j , j+1)
 
+
+
 def kereses(eredmeny, nevek):
     n=len(eredmeny)
     i=0
@@ -45,16 +62,15 @@ def kereses(eredmeny, nevek):
     else:
         print(nevek[i])
 
+
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
     kereses(eredmeny,nevek)
     maxpont=befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
-    print(nevek)
-    print(pontok)
-    print(eredmeny)
-    print(db)
+    atjutottak = kivalogat(nevek, eredmeny)
+    print(atjutottak)
 
 
 main()
