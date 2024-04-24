@@ -8,6 +8,7 @@ def befajl(nevek, pontok ,eredmeny):
         pontok.append(int(adatok[1]))
         eredmeny.append(adatok[2])
         sor = fr.readline().strip()
+
     fr.close()
     return maxpont
 
