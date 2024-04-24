@@ -12,7 +12,7 @@ def befajl(nevek, pontok ,eredmeny):
     fr.close()
     return maxpont
 
-
+#megszámolás
 def sikeres_vizsgak(eredmeny):
     db = 0
     n = len(eredmeny)
@@ -52,25 +52,24 @@ def rendez(nevek, pontok, eredmeny):
 
 
 
-def kereses(eredmeny, nevek):
-    n=len(eredmeny)
+def kereses(pontok, nevek):
+    n=len(pontok)
     i=0
-    while i < n and not(eredmeny[i] ==120):
+    while i < n and not(pontok[i] == 120):
         i += 1
     if i < n:
-        print("Nincs ilyen a listában! ")
-    else:
         print(nevek[i])
+    else:
+        print("Nincs ilyen a listában! ")
 
 
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
-    kereses(eredmeny,nevek)
     maxpont=befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
     atjutottak = kivalogat(nevek, eredmeny)
     print(atjutottak)
-
+    kereses(pontok,nevek)
 
 main()
