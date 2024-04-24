@@ -22,33 +22,34 @@ def sikeres_vizsgak(eredmeny):
     return db
 
 
-
-
-
-
-
 def csere(x, i, j):
     x[i], x[j] = x[j], x[i]
 
-def rendez(pontok,nevek,eredmeny):
+def rendez(nevek, pontok, eredmeny):
     n = len(pontok)
     for i in range(n):
-        for j in range(n-i-1):
-            if pontok[j] > pontok[j+1]:
-                csere(pontok, j, j+1)
-                csere(nevek, j, j+1)
-                csere(eredmeny, j, j+1)
+        for j in range(n - 1 - i):
+            if pontok[j] < pontok[j+1]:
+                csere(pontok, j , j+1)
+                csere(nevek, j , j+1)
+                csere(eredmeny, j , j+1)
 
+def kereses(eredmeny, nevek):
+    n=len(eredmeny)
+    i=0
+    while i < n and not(eredmeny[i] ==120):
+        i += 1
+    if i < n:
+        print("Nincs ilyen a listában! ")
+    else:
+        print(nevek[i])
 
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
-<<<<<<< HEAD
     maxpont=befajl(nevek, pontok,eredmeny)
     rendez(nevek, pontok,eredmeny)
-=======
-    maxpont = befajl(nevek, pontok, eredmeny)
     db = sikeres_vizsgak(eredmeny)
->>>>>>> b9f52c17acd8609bdd2cf5cc9ab86aeb32c5bc7a
+    kereses(eredmeny,nevek)
     print(nevek)
     print(pontok)
     print(eredmeny)
