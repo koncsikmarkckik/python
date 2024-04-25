@@ -2,7 +2,8 @@ from random import *
 
 
 def befajl(nevek, pontok ,eredmeny):
-    fr = open("alapvizsga1.txt", "r", encoding="UTF-8")
+    a  = input("Melyik txt-t nyissa meg?")
+    fr = open( a, "r", encoding="UTF-8")
     maxpont = int(fr.readline().strip())
     sor = fr.readline().strip()
     while sor != "":
@@ -14,6 +15,24 @@ def befajl(nevek, pontok ,eredmeny):
 
     fr.close()
     return maxpont
+
+def hozafuzes(nevek, pontok, eredmeny):
+    b= input("Akarsz e irni ??")
+    if b=="igen":
+        a= input("Melyiket ?")
+        fa=open( a, "a",encoding="UTF-8")
+        c=input("név?")
+        d=int(input("pontok?"))
+        if d >= 48:
+            eredmeny.append("igen")
+        else:
+            eredmeny.append("nem")
+        nevek.appen(c)
+        pontok.append(d)
+
+
+        fa.close
+
 
 
 
@@ -29,7 +48,7 @@ def rendez(nevek, pontok, eredmeny):
                 csere(nevek, j , j+1)
                 csere(eredmeny, j , j+1)
 
-#megszámolás vagy összegzés
+#megszámolás
 def sikeres_vizsgak(eredmeny):
     db = 0
     n = len(eredmeny)
@@ -39,15 +58,13 @@ def sikeres_vizsgak(eredmeny):
 
     return db
 
-def megszamolas(pontok,maxpont):
-    n=len(pontok) 
-    db = 0
+def atlag(pontok):
+    n=len(pontok)
+    ossz=0
     for i in range(n):
-        if pontok[i] > maxpont/2:
-            db += 1
- 
-
-
+        ossz+=pontok[i]
+    c=ossz/n
+    print("Az átlag:",c)
 
 
 
@@ -105,13 +122,20 @@ def main():
     maxpont = befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
-    megszamolas(pontok,maxpont)
+    atlag(pontok)
     atjutottak = kivalogat(nevek, eredmeny)
     min(nevek, pontok)
     max(nevek, pontok)
     kereses(pontok,nevek)
     r_szam(nevek)
-
+    print(nevek)
+    print(pontok)
+    print(eredmeny)
+    print("Ennyi a sikeres alapvizsga:",db)
+    print()
+    print()
+    print("A legtöbb pontot elért tanulo:",nevek[maxi])
+    print("A legkevesebbet pontot elért tanulo:",nevek[mini])
 
 
 main()

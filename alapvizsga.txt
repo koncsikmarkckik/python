@@ -22,7 +22,7 @@ Kovács Judit ; 47 ; nem
 Bíró Attila ; 23 ; nem
 Kovács Edit ; 75 ; igen
 Nagy Györgyné ; 111 ; igen
-Pintér Noémi ; 44 ; igen
+Pintér Noémi ; 44 ; nem
 Oláh Péter ; 85 ; igen
 Fekete Éva ; 85 ; igen
 Bánk Tamás ; 109 ; igen
