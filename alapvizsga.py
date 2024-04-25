@@ -29,7 +29,7 @@ def rendez(nevek, pontok, eredmeny):
                 csere(nevek, j , j+1)
                 csere(eredmeny, j , j+1)
 
-#megszámolás
+#megszámolás vagy összegzés
 def sikeres_vizsgak(eredmeny):
     db = 0
     n = len(eredmeny)
@@ -38,6 +38,18 @@ def sikeres_vizsgak(eredmeny):
             db += 1
 
     return db
+
+def megszamolas(pontok,maxpont):
+    n=len(pontok) 
+    db = 0
+    for i in range(n):
+        if pontok[i] > maxpont/2:
+            db += 1
+ 
+
+
+
+
 
 def kivalogat(nevek, eredmeny):
     atjutott_nevei = []
@@ -81,7 +93,7 @@ def kereses(pontok, nevek):
     else:
         print("Nincs ilyen a listában! ")
 
-def r_szam(nevek,):
+def r_szam(nevek):
     n=len(nevek)
     r= randint(1,n)
     print(nevek[r])
@@ -93,11 +105,12 @@ def main():
     maxpont = befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
+    megszamolas(pontok,maxpont)
+    atjutottak = kivalogat(nevek, eredmeny)
     min(nevek, pontok)
     max(nevek, pontok)
     kereses(pontok,nevek)
-    atjutottak = kivalogat(nevek, eredmeny)
-    r_szam(nevek,pontok,eredmeny)
+    r_szam(nevek)
 
 
 
