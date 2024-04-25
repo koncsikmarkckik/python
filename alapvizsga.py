@@ -12,6 +12,20 @@ def befajl(nevek, pontok ,eredmeny):
     fr.close()
     return maxpont
 
+
+
+def csere(x, i, j):
+    x[i], x[j] = x[j], x[i]
+
+def rendez(nevek, pontok, eredmeny):
+    n = len(pontok)
+    for i in range(n):
+        for j in range(n - 1 - i):
+            if pontok[j] < pontok[j+1]:
+                csere(pontok, j , j+1)
+                csere(nevek, j , j+1)
+                csere(eredmeny, j , j+1)
+
 #megszámolás
 def sikeres_vizsgak(eredmeny):
     db = 0
@@ -35,23 +49,6 @@ def bennevan(elem, lista):
         i += 1
     return i < len(lista)
 
-
-
-
-def csere(x, i, j):
-    x[i], x[j] = x[j], x[i]
-
-def rendez(nevek, pontok, eredmeny):
-    n = len(pontok)
-    for i in range(n):
-        for j in range(n - 1 - i):
-            if pontok[j] < pontok[j+1]:
-                csere(pontok, j , j+1)
-                csere(nevek, j , j+1)
-                csere(eredmeny, j , j+1)
-
-
-
 def kereses(pontok, nevek):
     n=len(pontok)
     i=0
@@ -69,7 +66,8 @@ def main():
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
     atjutottak = kivalogat(nevek, eredmeny)
-    print(atjutottak)
     kereses(pontok,nevek)
+    print(atjutottak)
+
 
 main()
