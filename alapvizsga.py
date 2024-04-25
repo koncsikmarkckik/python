@@ -1,3 +1,6 @@
+from random import *
+
+
 def befajl(nevek, pontok ,eredmeny):
     fr = open("alapvizsga1.txt", "r", encoding="UTF-8")
     maxpont = int(fr.readline().strip())
@@ -51,6 +54,7 @@ def bennevan(elem, lista):
     return i < len(lista)
 
 
+
 def min(nevek, pontok):
     mini = 0
     for i in range(1, len(pontok)):
@@ -77,6 +81,11 @@ def kereses(pontok, nevek):
     else:
         print("Nincs ilyen a listában! ")
 
+def r_szam(nevek,):
+    n=len(nevek)
+    r= randint(1,n)
+    print(nevek[r])
+
 
 
 def main():
@@ -88,7 +97,7 @@ def main():
     max(nevek, pontok)
     kereses(pontok,nevek)
     atjutottak = kivalogat(nevek, eredmeny)
-
+    r_szam(nevek,pontok,eredmeny)
 
 
 
