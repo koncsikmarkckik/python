@@ -41,13 +41,31 @@ def kivalogat(nevek, eredmeny):
     for i in range(len(nevek)):
         if eredmeny[i] == "igen" and not bennevan(nevek[i], atjutott_nevei):
             atjutott_nevei.append(nevek[i])
-
+        
+    return atjutott_nevei
 
 def bennevan(elem, lista):
     i = 0
     while i < len(lista) and not(lista[i] == elem):
         i += 1
     return i < len(lista)
+
+
+def min(nevek, pontok):
+    mini = 0
+    for i in range(1, len(pontok)):
+        if pontok[i] < pontok[mini]:
+            mini = i
+    return nevek[mini]
+
+
+def max(nevek, pontok):
+    maxi = 0
+    for i in range(1, len(pontok)):
+        if pontok[i] > pontok[maxi]:
+            maxi = i
+    return nevek[maxi]
+
 
 def kereses(pontok, nevek):
     n=len(pontok)
@@ -60,14 +78,18 @@ def kereses(pontok, nevek):
         print("Nincs ilyen a listában! ")
 
 
+
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
-    maxpont=befajl(nevek, pontok, eredmeny)
+    maxpont = befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
-    atjutottak = kivalogat(nevek, eredmeny)
+    min(nevek, pontok)
+    max(nevek, pontok)
     kereses(pontok,nevek)
-    print(atjutottak)
+    atjutottak = kivalogat(nevek, eredmeny)
+
+
 
 
 main()

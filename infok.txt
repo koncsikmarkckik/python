@@ -1,20 +1,13 @@
 valami write tipusú művelet kéne, amit a program letud kezelni (alapvizsgán átmentek kiíratása egy másik fájlba) + (ide mehetne a keresés tétele)
 
+
 következő programozási tételek mindegyikének alkalmazására:
 b. összegzés (sorozatszámítás)
 (igen = 1,  nem = 0)
 (összeadni az "igeneket")
 
-c. minimum/maximum kiválasztás
-(legjobb, illetve legrosszabb vizsga kiíratása)
-
-
-e. kiválogatás
 
 f. Van alapértelmezett értékkel rendelkező paramétere 
 (pl. fnlckik github, függvény/kulcsszavak.py)
-
-legalább egy példa:
-visszatérési értek, ami lista legyen!
 
 random generálás (megadni egy nevet, randomozná a pontszámát, majd a txt fájlhoz adná az adatokat)
