@@ -15,3 +15,8 @@ Szűcs György ; 12 ; nem
 Kovács Erzsébet ; 77 ; igen
 
 Nagy Sándor ; 75 ; igen
+alapvi tsm ; 1 ; nem
+alma fa ; 12 ; nem
+Nagy Réka ; 12 ; nem
+Nagy Tamas ; 1 ; nem
+Nagy Sándor ; 12 ; nem

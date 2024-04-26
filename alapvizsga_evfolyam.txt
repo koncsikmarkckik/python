@@ -59,3 +59,4 @@ Gulyás Miklós ; 44 ; nem
 Mészáros Boglárka ; 65 ; igen
 Kovács Ádám ; 34 ; nem
 Nagy Réka ; 43 ; nem
+

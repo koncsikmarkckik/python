@@ -18,7 +18,7 @@ def befajl(nevek, pontok ,eredmeny):
         sor = fr.readline().strip()
 
     fr.close()
-    return maxpont
+    return maxpont 
 
 def hozafuzes(nevek, pontok, eredmeny):
     print()
