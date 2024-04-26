@@ -1,12 +1,13 @@
 from random import *
 
 def befajl(nevek, pontok ,eredmeny):
+    print()
     print("Az alábbi .txt állományok érhetőek el: ")
-    print("alapvizsga_rovid.txt")
-    print("alapvizsga_evfolyam.txt")
+    print("--> alapvizsga_rovid.txt")
+    print("--> alapvizsga_evfolyam.txt")
     print()
     a  = input("Melyik .txt állományban szeretnél dolgozni?\n")
-    fr = open( a, "r", encoding="UTF-8")
+    fr = open(a, "r", encoding="UTF-8")
     maxpont = int(fr.readline().strip())
     sor = fr.readline().strip()
     while sor != "":
@@ -20,12 +21,13 @@ def befajl(nevek, pontok ,eredmeny):
     return maxpont
 
 def hozafuzes(nevek, pontok, eredmeny):
-    b = input("A kiválasztott állományban szeretnél-e írni?\n")
-    if b=="igen":
-        a= input("Melyikbe ?")
-        fa=open( a, "a",encoding="UTF-8")
-        c=input("név?")
-        d=int(input("pontok?"))
+    print()
+    b = input("A kiválasztott állományban szeretnél-e írni?\n(igen/nem): ")
+    if b =="igen":
+        a = input("Melyikbe ?")
+        fa = open(a, "a", encoding="UTF-8")
+        c = input("név?")
+        d = int(input("pontok?"))
         if d >= 48:
             e = "igen"
         else:
@@ -64,11 +66,11 @@ def sikeres_vizsgak(eredmeny):
     return db
 
 def atlag(pontok):
-    n=len(pontok)
-    ossz=0
+    n = len(pontok)
+    ossz = 0
     for i in range(n):
-        ossz+=pontok[i]
-    c=ossz/n
+        ossz += pontok[i]
+    c = ossz / n
     return c
 
 
@@ -106,8 +108,8 @@ def max(nevek, pontok):
 
 
 def kereses(pontok, nevek):
-    n=len(pontok)
-    i=0
+    n = len(pontok)
+    i = 0
     while i < n and not(pontok[i] == 120):
         i += 1
     if i < n:
@@ -123,27 +125,27 @@ def r_szam(nevek):
 
 
 def main():
-    nevek, pontok , eredmeny= [], [] ,[]
+    nevek, pontok, eredmeny = [], [] ,[]
     maxpont = befajl(nevek, pontok, eredmeny)
     hozafuzes(nevek, pontok, eredmeny)
-    rendez(nevek, pontok,eredmeny)
+    rendez(nevek, pontok, eredmeny)
     db = sikeres_vizsgak(eredmeny)
     atl=atlag(pontok)
     atjutottak = kivalogat(nevek, eredmeny)
     mini = min(nevek, pontok)
     maxi = max(nevek, pontok)
-    kereses(pontok,nevek)
+    kereses(pontok, nevek)
     random_sorsolt = r_szam(nevek)
 
     print(nevek)
     print(pontok)
     print(eredmeny)
-    print("Ennyi a sikeres alapvizsga:",db)
-    print("Egy random név a névsorból:",random_sorsolt)
-    print("Az átjutottak nevei:",atjutottak)
+    print("Ennyi a sikeres alapvizsga:", db)
+    print("Egy random név a névsorból:", random_sorsolt)
+    print("Az átjutottak nevei:", atjutottak)
     print("A legtöbb pontot elért tanulo:", maxi)
     print("A legkevesebbet pontot elért tanulo:", mini)
-    print("A teljesítmény átlaga:",atl)
+    print("A teljesítmény átlaga:", atl)
 
 
 main()
