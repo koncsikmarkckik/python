@@ -18,7 +18,7 @@ def befajl(nevek, pontok ,eredmeny):
         sor = fr.readline().strip()
 
     fr.close()
-    return maxpont
+    return maxpont 
 
 def hozafuzes(nevek, pontok, eredmeny):
     print()
@@ -156,6 +156,7 @@ def main():
     print("Az alapvizsgán szerzett pontok átlaga:", round(atl, 1))
     print()
     print("Egy kisorsolt név a névsorból, aki kap egy csokit:", random_sorsolt)
+
 
 
 main()
