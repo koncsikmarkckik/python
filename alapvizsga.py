@@ -23,11 +23,14 @@ def befajl(nevek, pontok ,eredmeny):
 def hozafuzes(nevek, pontok, eredmeny):
     print()
     b = input("A kiválasztott állományban szeretnél-e írni?\n(igen/nem): ")
+    print()
     if b =="igen":
-        a = input("Melyikbe ?")
+        a = input("Ismételd meg a fájl nevét!\n")
+        print()
         fa = open(a, "a", encoding="UTF-8")
-        c = input("név?")
-        d = int(input("pontok?"))
+        c = input("Teljes neve: ")
+        d = int(input("Alapvizsgán elért pontszám (0-120): "))
+        print()
         if d >= 48:
             e = "igen"
         else:
@@ -55,7 +58,7 @@ def rendez(nevek, pontok, eredmeny):
                 csere(nevek, j , j+1)
                 csere(eredmeny, j , j+1)
 
-#megszámolás
+
 def sikeres_vizsgak(eredmeny):
     db = 0
     n = len(eredmeny)
@@ -78,17 +81,10 @@ def atlag(pontok):
 def kivalogat(nevek, eredmeny):
     atjutott_nevei = []
     for i in range(len(nevek)):
-        if eredmeny[i] == "igen" and not bennevan(nevek[i], atjutott_nevei):
+        if eredmeny[i] == "igen":
             atjutott_nevei.append(nevek[i])
         
     return atjutott_nevei
-
-def bennevan(elem, lista):
-    i = 0
-    while i < len(lista) and not(lista[i] == elem):
-        i += 1
-    return i < len(lista)
-
 
 
 def min(nevek, pontok):
@@ -107,15 +103,17 @@ def max(nevek, pontok):
     return nevek[maxi]
 
 
+
 def kereses(pontok, nevek):
     n = len(pontok)
     i = 0
     while i < n and not(pontok[i] == 120):
         i += 1
     if i < n:
-        print("Aki 120 pontot elért: ",nevek[i])
+        print("Aki maximális pontszámot ért el az alapvizsgán:", nevek[i])
     else:
-        print("Nincs ilyen a listában! ")
+        print("Senkinek se lett maximális pontszáma az alapvizsgán! ")
+
 
 def r_szam(nevek):
     n = len(nevek)
@@ -137,15 +135,27 @@ def main():
     kereses(pontok, nevek)
     random_sorsolt = r_szam(nevek)
 
+    print()
+    print("Diákok, akik részt vettek az alapvizsgán: ")
     print(nevek)
+    print()
+    print("A diákok pontszámai:")
     print(pontok)
+    print()
+    print("Sikerült-e a diáknak átjutni a vizsgán? ")
     print(eredmeny)
-    print("Ennyi a sikeres alapvizsga:", db)
-    print("Egy random név a névsorból:", random_sorsolt)
+    print()
+    print("Sikeres alapvizsgák száma:", db)
+    print()
     print("Az átjutottak nevei:", atjutottak)
+    print()
     print("A legtöbb pontot elért tanulo:", maxi)
-    print("A legkevesebbet pontot elért tanulo:", mini)
-    print("A teljesítmény átlaga:", atl)
+    print()
+    print("A legkevesebb pontot elért tanulo:", mini)
+    print()
+    print("Az alapvizsgán szerzett pontok átlaga:", round(atl, 1))
+    print()
+    print("Egy kisorsolt név a névsorból, aki kap egy csokit:", random_sorsolt)
 
 
 main()
