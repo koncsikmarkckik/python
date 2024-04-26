@@ -143,7 +143,7 @@ def main():
     print("Az átjutottak nevei:",atjutottak)
     print("A legtöbb pontot elért tanulo:", maxi)
     print("A legkevesebbet pontot elért tanulo:", mini)
-    print("Az teljesítmény átlaga:",atl)
+    print("A teljesítmény átlaga:",atl)
 
 
 main()
