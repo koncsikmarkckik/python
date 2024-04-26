@@ -1,6 +1,5 @@
 from random import *
 
-
 def befajl(nevek, pontok ,eredmeny):
     a  = input("Melyik txt-t nyissa meg?")
     fr = open( a, "r", encoding="UTF-8")
@@ -24,14 +23,16 @@ def hozafuzes(nevek, pontok, eredmeny):
         c=input("név?")
         d=int(input("pontok?"))
         if d >= 48:
-            eredmeny.append("igen")
+            e = "igen"
         else:
-            eredmeny.append("nem")
-        nevek.appen(c)
+            e = "nem"
+        nevek.append(c)
         pontok.append(d)
+        eredmeny.append(e)
+        fa.write(f"{c} ; {d} ; {e}")
 
 
-        fa.close
+        fa.close()
 
 
 
@@ -111,9 +112,10 @@ def kereses(pontok, nevek):
         print("Nincs ilyen a listában! ")
 
 def r_szam(nevek):
-    n=len(nevek)
-    r= randint(1,n)
-    print(nevek[r])
+    n = len(nevek)
+    r = randint(1,n)
+
+    return nevek[r]
 
 
 
@@ -121,21 +123,22 @@ def main():
     nevek, pontok , eredmeny= [], [] ,[]
     maxpont = befajl(nevek, pontok, eredmeny)
     rendez(nevek, pontok,eredmeny)
+    hozafuzes(nevek, pontok, eredmeny)
     db = sikeres_vizsgak(eredmeny)
     atlag(pontok)
     atjutottak = kivalogat(nevek, eredmeny)
-    min(nevek, pontok)
-    max(nevek, pontok)
+    mini = min(nevek, pontok)
+    maxi = max(nevek, pontok)
     kereses(pontok,nevek)
-    r_szam(nevek)
+    random_sorsolt = r_szam(nevek)
     print(nevek)
     print(pontok)
     print(eredmeny)
     print("Ennyi a sikeres alapvizsga:",db)
+    print(random_sorsolt)
     print()
-    print()
-    print("A legtöbb pontot elért tanulo:",nevek[maxi])
-    print("A legkevesebbet pontot elért tanulo:",nevek[mini])
+    print("A legtöbb pontot elért tanulo:", maxi)
+    print("A legkevesebbet pontot elért tanulo:", mini)
 
 
 main()

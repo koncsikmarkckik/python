@@ -12,4 +12,4 @@ Papp Katalin ; 24 ; nem
 Balogh István ; 3 ; nem
 Lakatos Emese ; 23 ; nem
 Szűcs György ; 12 ; nem
-Kovács Erzsébet ; 77 ; igen
+Kovács Erzsébet ; 77 ; igenUrbán Dániel ; 50 ; igen

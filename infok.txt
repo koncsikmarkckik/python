@@ -1,10 +1,2 @@
-valami write tipusú művelet kéne, amit a program letud kezelni (alapvizsgán átmentek kiíratása egy másik fájlba) + (ide mehetne a keresés tétele)
-félig-meddig
-
-következő programozási tételek mindegyikének alkalmazására:
 
 
-f. Van alapértelmezett értékkel rendelkező paramétere 
-(pl. fnlckik github, függvény/kulcsszavak.py)
-
-random generálás (megadni egy nevet, randomozná a pontszámát, majd a txt fájlhoz adná az adatokat)kész
