@@ -69,7 +69,7 @@ def atlag(pontok):
     for i in range(n):
         ossz+=pontok[i]
     c=ossz/n
-    print("Az átlag:",c)
+    return c
 
 
 
@@ -111,14 +111,13 @@ def kereses(pontok, nevek):
     while i < n and not(pontok[i] == 120):
         i += 1
     if i < n:
-        print(nevek[i])
+        print("Aki 120 pontot elért: ",nevek[i])
     else:
         print("Nincs ilyen a listában! ")
 
 def r_szam(nevek):
     n = len(nevek)
     r = randint(1,n)
-
     return nevek[r]
 
 
@@ -129,20 +128,22 @@ def main():
     rendez(nevek, pontok,eredmeny)
     hozafuzes(nevek, pontok, eredmeny)
     db = sikeres_vizsgak(eredmeny)
-    atlag(pontok)
+    atl=atlag(pontok)
     atjutottak = kivalogat(nevek, eredmeny)
     mini = min(nevek, pontok)
     maxi = max(nevek, pontok)
     kereses(pontok,nevek)
     random_sorsolt = r_szam(nevek)
+
     print(nevek)
     print(pontok)
     print(eredmeny)
     print("Ennyi a sikeres alapvizsga:",db)
-    print(random_sorsolt)
-    print()
+    print("Egy random név a névsorból:",random_sorsolt)
+    print("Az átjutottak nevei:",atjutottak)
     print("A legtöbb pontot elért tanulo:", maxi)
     print("A legkevesebbet pontot elért tanulo:", mini)
+    print("Az teljesítmény átlaga:",atl)
 
 
 main()

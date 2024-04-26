@@ -13,4 +13,4 @@ Balogh István ; 3 ; nem
 Lakatos Emese ; 23 ; nem
 Szűcs György ; 12 ; nem
 Kovács Erzsébet ; 77 ; igen
-URbi ; 2 ; nem
+
