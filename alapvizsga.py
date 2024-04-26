@@ -22,7 +22,7 @@ def befajl(nevek, pontok ,eredmeny):
 def hozafuzes(nevek, pontok, eredmeny):
     b = input("A kiválasztott állományban szeretnél-e írni?\n")
     if b=="igen":
-        a= input("Melyiket ?")
+        a= input("Melyikbe ?")
         fa=open( a, "a",encoding="UTF-8")
         c=input("név?")
         d=int(input("pontok?"))
@@ -125,8 +125,8 @@ def r_szam(nevek):
 def main():
     nevek, pontok , eredmeny= [], [] ,[]
     maxpont = befajl(nevek, pontok, eredmeny)
-    rendez(nevek, pontok,eredmeny)
     hozafuzes(nevek, pontok, eredmeny)
+    rendez(nevek, pontok,eredmeny)
     db = sikeres_vizsgak(eredmeny)
     atl=atlag(pontok)
     atjutottak = kivalogat(nevek, eredmeny)
