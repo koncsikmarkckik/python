@@ -20,3 +20,4 @@ alma fa ; 12 ; nem
 Nagy Réka ; 12 ; nem
 Nagy Tamas ; 1 ; nem
 Nagy Sándor ; 12 ; nem
+Kiss Sándor ; 23 ; nem
