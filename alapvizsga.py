@@ -22,23 +22,24 @@ def befajl(nevek, pontok ,eredmeny):
 
 def hozafuzes(nevek, pontok, eredmeny):
     print()
-    b = input("A kiválasztott állományban szeretnél-e írni?\n(igen/nem): ")
+    valasz = input("A kiválasztott állományban szeretnél-e írni?\n(igen/nem): ")
     print()
-    if b =="igen":
-        a = input("Ismételd meg a fájl nevét!\n")
+    if valasz =="igen":
+        ismet = input("Ismételd meg a fájl nevét!\n")
         print()
-        fa = open(a, "a", encoding="UTF-8")
-        c = input("Teljes neve: ")
-        d = int(input("Alapvizsgán elért pontszám (0-120): "))
+        fa = open(ismet, "a", encoding="UTF-8")
+        nev = input("Teljes neve: ")
+        pont = int(input("Alapvizsgán elért pontszám (0-120): "))
         print()
-        if d >= 48:
-            e = "igen"
+        if pont >= 48:
+            eredm = "igen"
         else:
-            e = "nem"
-        nevek.append(c)
-        pontok.append(d)
-        eredmeny.append(e)
-        fa.write(f"{c} ; {d} ; {e}\n")
+            eredm = "nem"
+            
+        nevek.append(nev)
+        pontok.append(pont)
+        eredmeny.append(eredm)
+        fa.write(f"{nev} ; {pont} ; {eredm}\n")
 
 
         fa.close()
@@ -68,12 +69,14 @@ def sikeres_vizsgak(eredmeny):
 
     return db
 
+
 def atlag(pontok):
     n = len(pontok)
     ossz = 0
     for i in range(n):
         ossz += pontok[i]
     c = ossz / n
+    
     return c
 
 
@@ -92,6 +95,7 @@ def min(nevek, pontok):
     for i in range(1, len(pontok)):
         if pontok[i] < pontok[mini]:
             mini = i
+            
     return nevek[mini]
 
 
@@ -100,6 +104,7 @@ def max(nevek, pontok):
     for i in range(1, len(pontok)):
         if pontok[i] > pontok[maxi]:
             maxi = i
+            
     return nevek[maxi]
 
 
@@ -117,7 +122,8 @@ def kereses(pontok, nevek):
 
 def r_szam(nevek):
     n = len(nevek)
-    r = randint(1,n)
+    r = randint(1, n)
+    
     return nevek[r]
 
 
@@ -147,11 +153,11 @@ def main():
     print()
     print("Sikeres alapvizsgák száma:", db)
     print()
-    print("Az átjutottak nevei:", atjutottak)
+    print("Az átjutottak nevei:\n", atjutottak)
     print()
-    print("A legtöbb pontot elért tanulo:", maxi)
+    print("A legtöbb pontot elért tanuló:", maxi)
     print()
-    print("A legkevesebb pontot elért tanulo:", mini)
+    print("A legkevesebb pontot elért tanuló:", mini)
     print()
     print("Az alapvizsgán szerzett pontok átlaga:", round(atl, 1))
     print()
