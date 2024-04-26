@@ -1,7 +1,11 @@
 from random import *
 
 def befajl(nevek, pontok ,eredmeny):
-    a  = input("Melyik txt-t nyissa meg?")
+    print("Az alábbi .txt állományok érhetőek el: ")
+    print("alapvizsga_rovid.txt")
+    print("alapvizsga_evfolyam.txt")
+    print()
+    a  = input("Melyik .txt állományban szeretnél dolgozni?\n")
     fr = open( a, "r", encoding="UTF-8")
     maxpont = int(fr.readline().strip())
     sor = fr.readline().strip()
@@ -16,7 +20,7 @@ def befajl(nevek, pontok ,eredmeny):
     return maxpont
 
 def hozafuzes(nevek, pontok, eredmeny):
-    b= input("Akarsz e irni ??")
+    b = input("A kiválasztott állományban szeretnél-e írni?\n")
     if b=="igen":
         a= input("Melyiket ?")
         fa=open( a, "a",encoding="UTF-8")
@@ -29,7 +33,7 @@ def hozafuzes(nevek, pontok, eredmeny):
         nevek.append(c)
         pontok.append(d)
         eredmeny.append(e)
-        fa.write(f"{c} ; {d} ; {e}")
+        fa.write(f"{c} ; {d} ; {e}\n")
 
 
         fa.close()
